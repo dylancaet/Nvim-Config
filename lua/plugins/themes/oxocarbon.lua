@@ -29,6 +29,15 @@ return {
       hi NeoTreeGitAdded guifg=#7ccf8c
       hi NeoTreeGitModified guifg=#e0af68
       hi NeoTreeGitDeleted guifg=#ff5c57
+
+      " WhichKeyBorder
+      hi WhichKeyBorder guifg=#B890F6 guibg=NONE
     ]]
+
+    -- Translucent background
+    -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    -- vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+
  end,
 }

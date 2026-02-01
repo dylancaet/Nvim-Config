@@ -23,6 +23,7 @@ return { -- Autocompletion
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
+    "hrsh7th/cmp-nvim-lsp-signature-help",
 
     -- Adds a number of user-friendly snippets
     'rafamadriz/friendly-snippets',
@@ -60,6 +61,8 @@ return { -- Autocompletion
       Operator = '󰆕',
       TypeParameter = '󰊄',
     }
+
+    vim.keymap.set('n', 'grs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', {})
 
     cmp.setup {
       snippet = {
@@ -119,6 +122,7 @@ return { -- Autocompletion
       },
       sources = {
         { name = 'nvim_lsp' },
+        { name = 'nvim_lsp_signature_help' },
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'path' },

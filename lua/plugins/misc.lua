@@ -21,18 +21,19 @@ return {
     'folke/which-key.nvim',
     opts = {
       delay = 100,
-      -- win = {
-      --   border = {
-      --     { '┌', 'FloatBorder' },
-      --     { '─', 'FloatBorder' },
-      --     { '┐', 'FloatBorder' },
-      --     { '│', 'FloatBorder' },
-      --     { '┘', 'FloatBorder' },
-      --     { '─', 'FloatBorder' },
-      --     { '└', 'FloatBorder' },
-      --     { '│', 'FloatBorder' },
-      --   },
-      -- },
+      preset = "modern",
+      win = {
+        border = {
+          { '┌', 'FloatBorder' },
+          { '─', 'FloatBorder' },
+          { '┐', 'FloatBorder' },
+          { '│', 'FloatBorder' },
+          { '┘', 'FloatBorder' },
+          { '─', 'FloatBorder' },
+          { '└', 'FloatBorder' },
+          { '│', 'FloatBorder' },
+        },
+      },
     },
   },
   {
@@ -57,6 +58,7 @@ return {
     end,
   },
   {
+    -- auto format selection
     'stevearc/conform.nvim',
     config = function()
       vim.keymap.set("v", "<leader>f", function()
@@ -68,6 +70,14 @@ return {
           },
         })
       end, { desc = "Format selection" })
+    end
+  },
+  {
+    -- surround actions
+    'nvim-mini/mini.surround',
+    version = '*',
+    config = function ()
+      require('mini.surround').setup()
     end
   }
 }
